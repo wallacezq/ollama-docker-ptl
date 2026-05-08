@@ -43,7 +43,7 @@ Tested on **Intel Core Ultra x7 358H** (Panther Lake) with LPDDR5 8533MHz 64GB R
 
 | Model Size | Examples | Speed |
 |-----------|----------|-------|
-| **4B** | Phi-4-mini, Qwen3:4b | ~38+ tok/s |
+| **4B** | Phi-4-mini, Qwen3:4b | ~35+ tok/s |
 | **7-8B** | qwen3:8b, Gemma 3 | ~20-22 tok/s |
 | **14B+** | qwen3:14b | ~10-12 tok/s |
 
