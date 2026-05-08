@@ -1,0 +1,21 @@
+services:
+  ollama_serving:
+     build:
+        context: .
+        dockerfile: ./Dockerfile
+        args:
+         http_proxy: ${http_proxy}
+         https_proxy: ${https_proxy}
+     image: ollama_base_image
+     container_name: ipex_ollama_service
+     privileged: true
+     environment:
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - OLLAMA_HOST=127.0.0.1
+      - OLLAMA_DEBUG=1
+     volumes:
+      - ${HOME}/.ollama:/root/.ollama
+      - /dev:/dev
+     network_mode: host
+
