@@ -43,19 +43,21 @@ Tested on **Intel Core Ultra x7 358H** (Panther Lake) with LPDDR5 8533MHz 64GB R
 
 | Model Size | Examples | Speed |
 |-----------|----------|-------|
-| **4B** | Phi-4-mini, Qwen3:4b | ~15+ tok/s |
-| **7-8B** | Llama 3.1:8b, Gemma 3 | ~8-12 tok/s |
-| **14B+** | Qwen3:14b | ~4-6 tok/s |
+| **4B** | Phi-4-mini, Qwen3:4b | ~38+ tok/s |
+| **7-8B** | qwen3:8b, Gemma 3 | ~20~22 tok/s |
+| **14B+** | qwen3:14b | ~10~12 tok/s |
 
 > 💡 **Note:** `runner.inference=cpu` in Ollama logs is a display quirk — actual inference runs on SYCL0 (iGPU). Check GPU utilization with `intel_gpu_top` to confirm.
 
 ## 🚀 Quick Start
 
-### Docker Run (Standard Bridge)
+### Docker Run 
 
 ```bash
 docker compose build --no-cache
 docker compose up -d
+
+python ollama_benchmark.py
 ```
 or
 
